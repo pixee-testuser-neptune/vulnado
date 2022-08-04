@@ -17,7 +17,7 @@ public class Cowsay {
       BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
       String line;
-      while ((line = reader.readLine()) != null) {
+      while ((line = io.pixee.security.BoundedLineReader.readLine(reader, 1000000)) != null) {
         output.append(line + "\n");
       }
     } catch (Exception e) {
