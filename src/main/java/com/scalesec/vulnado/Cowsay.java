@@ -1,5 +1,4 @@
 package com.scalesec.vulnado;
-import io.pixee.security.BoundedLineReader;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,7 +17,7 @@ public class Cowsay {
       BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
       String line;
-      while ((line = BoundedLineReader.readLine(reader, 1000000)) != null) {
+      while ((line = reader.readLine()) != null) {
         output.append(line + "\n");
       }
     } catch (Exception e) {
