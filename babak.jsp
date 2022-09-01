@@ -1,3 +1,3 @@
 hi
 
-<%= request.getParameter("foo") %>
+<%=org.owasp.encoder.Encode.forHtml( request.getParameter("foo") )%>
