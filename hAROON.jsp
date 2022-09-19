@@ -1,4 +1,4 @@
 
 sfsdf
 
-<%= request.getParameter("xss") %>
+<%=org.owasp.encoder.Encode.forHtml( request.getParameter("xss") )%>
